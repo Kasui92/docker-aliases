@@ -1,0 +1,216 @@
+#!/bin/sh
+
+# -------------------------
+# Docker
+# -------------------------
+
+# Base Docker shortcut
+alias dk="docker"
+
+# Get the list of images
+alias dki="docker images"
+# Get a formatted list of containers
+alias dkps="docker ps"
+alias dkPS="docker ps --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'"
+alias dkpsa="docker ps -a"
+alias dkPSa="docker ps -a --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'"
+# Get logs
+alias dkl="docker logs"
+alias dkL="docker logs -f"
+# Get information/IP from a container or image
+alias dkin="docker inspect"
+alias dkip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+# Get history
+alias dkh="docker history"
+
+# Get containers stats
+alias dkt='docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}"'
+
+# Run a process in a new container
+alias dkr="docker run"
+# Run a process in a new container, then run a command
+alias dkrd="docker run -d -P"
+# Run a process in a new interactive container, then run a command
+alias dkri="docker run -i -t -P"
+
+# Container status management
+alias dks='docker start'
+alias dkx='docker stop'
+dkX() { docker stop $(docker ps -a -q); }
+alias dkw='docker wait'
+alias dkp='docker pause'
+alias dkP='docker unpause'
+# Rename á container
+alias dkrn='docker rename'
+# Remove containewr
+alias dkrm='docker rm'
+dkRM() { docker rm $(docker ps -a -q); }
+# Run a command into a running container
+alias dke='docker exec'
+alias dkE="docker exec -i -t"
+dkbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+# Kill a running container
+alias dkk="docker kill"
+dkK() {docker kill $(docker ps -a -q); }
+
+# Build an image from a Dockerfile
+alias dkrb="docker build"
+# Remove an image
+alias dkrmi="docker rmi"
+drRMI() { docker rmi $(docker images -q); }
+
+# -------------------------
+# Docker Container
+# -------------------------
+
+# Base Docker Container shortcut
+alias dkC="docker container"
+
+# Get containers list
+alias dkCls="docker container ls"
+alias dkCLS="docker container ls --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'"
+# Get container logs
+alias dkCl="docker container logs"
+alias dkCL="docker container logs -f"
+
+# Get information/IP from a container
+alias dkCin="docker container inspect"
+alias dkCip="docker container inspect --format '{{ .NetworkSettings.IPAddress }}'"
+
+# Run a process in a new container
+alias dkr="docker container run"
+# Run a process in a new container, then run a command
+alias dkrd="docker container run -d -P"
+# Run a process in a new interactive container, then run a command
+alias dkri="docker container run -i -t -P"
+
+# Container status management
+alias dkCs="docker container start"
+alias dkCx="docker container stop"
+alias dkCw="docker container wait"
+alias dkCp="docker container pause"
+alias dkCP="docker container unpause"
+alias dkCS="docker container restart"
+# Rename a container
+alias dkCrn="docker container rename"
+# Remove a container
+alias dkCrm="docker container rm"
+# Remove all stopped container
+alias dkCpr="docker container prune"
+
+# Attach to a running container
+alias dkCa="docker container attach"
+
+# Run a command into a running container
+alias dkCe='docker container exec'
+alias dkCE="docker container exec -i -t"
+dkCbash() { docker container exec -it $(docker ps -aqf "name=$1") bash; }
+# Kill a running container
+alias dkCk="docker container kill"
+
+# -------------------------
+# Docker Image
+# -------------------------
+
+# Base Docker Image shortcut
+alias dkI="docker image"
+
+# Build an image from a Dockerfile
+alias dkIb="docker image build"
+
+# Get image history
+alias dkIh="docker image history"
+
+# Get information/IP from an image
+alias dkIin="docker image inspect"
+alias dkIip="docker image inspect --format '{{ .NetworkSettings.IPAddress }}'"
+
+# Get image list
+alias dkIls="docker image ls"
+
+# Remove an image
+alias dkIrm="docker image rm"
+# Remove all unused image
+alias dkIpr="docker image prune"
+
+# -------------------------
+# Docker Volume
+# -------------------------
+
+# Base Docker Volume shortcut
+alias dkV="docker volume"
+
+# Get information/IP from a volume
+alias dkVin="docker volume inspect"
+
+# Get all volumes
+alias dkVls="docker volume ls"
+
+# Remove an volume
+alias dkVrm="docker volume rm"
+# Remove all unused volume
+alias dkVpr="docker volume prune"
+
+# -------------------------
+# Docker Network
+# -------------------------
+
+# Base Docker Network shortcut
+alias dkN="docker network"
+
+# Get all networks
+alias dkNls="docker network ls"
+
+# Start anNetwork connection
+alias dkNs="docker network connect"
+# Stop a network connection
+alias dkNx="docker network disconnect"
+
+# Get information/IP from a network
+alias dkNin="docker network inspect"
+
+# Remove an network
+alias dkNrm="docker network rm"
+# Remove all unused network
+alias dkNpr="docker network prune"
+
+# -------------------------
+# Docker Compose
+# -------------------------
+
+# Base docker-compose shortcut
+alias dkc="docker-compose"
+
+# Build a service
+alias dkcb="docker-compose build"
+alias dkcB="docker-compose build --no-cache"
+
+# Create and start a container
+alias dkcu="docker-compose up"
+# Create and start a container in detachere mod
+alias dkcU="docker-compose up -d"
+
+# Stop a service and remove containers, volumes, networks
+alias dkcd="docker-compose down"
+alias dkcD="docker-compose down --rmi all"
+
+# Kill containers of a service
+alias dkck="docker-compose kill"
+
+# Get service logs
+alias dkcl="docker-compose logs"
+alias dkcL="docker-compose logs -f"
+
+# Get list of service containers
+alias dkcls="docker-compose ps"
+
+# Service containers menagement
+alias dkcs="docker-compose start"
+alias dkcx="docker-compose stop"
+alias dkcp="docker-compose pause"
+alias dkcP="docker-compose unpause"
+alias dkcS="docker-compose restart"
+
+# Rebuild a service
+alias dkcR="docker-compose down --rmi all && docker-compose up -d"
+
