@@ -36,7 +36,7 @@ alias dkri="docker run -i -t -P"
 # Container status management
 alias dks="docker start"
 alias dkx="docker stop"
-dkX() { docker stop '$(docker ps -a -q)'; }
+dkX() { docker stop $(docker ps -a -q); }
 alias dkw="docker wait"
 alias dkp="docker pause"
 alias dkP="docker unpause"
@@ -48,16 +48,16 @@ dkRM() { docker rm '$(docker ps -a -q)'; }
 # Run a command into a running container
 alias dke="docker exec"
 alias dkE="docker exec -i -t"
-dkbash() { docker exec -it '$(docker ps -aqf "name=$1")' bash; }
+dkbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 # Kill a running container
 alias dkk="docker kill"
-dkK() { docker kill '$(docker ps -a -q)'; }
+dkK() { docker kill $(docker ps -a -q); }
 
 # Build an image from a Dockerfile
 alias dkrb="docker build"
 # Remove an image
 alias dkrmi="docker rmi"
-drRMI() { docker rmi '$(docker ps -a -q)'; }
+drRMI() { docker rmi $(docker ps -a -q); }
 
 # -------------------------
 # Docker Container
@@ -104,7 +104,7 @@ alias dkCa="docker container attach"
 # Run a command into a running container
 alias dkCe='docker container exec'
 alias dkCE="docker container exec -i -t"
-dkCbash() { docker container exec -it '$(docker ps -aqf "name=$1")' bash; }
+dkCbash() { docker container exec -it $(docker ps -aqf "name=$1") bash; }
 # Kill a running container
 alias dkCk="docker container kill"
 
@@ -213,4 +213,3 @@ alias dkcS="docker-compose restart"
 
 # Rebuild a service
 alias dkcR="docker-compose down --rmi all && docker-compose up -d"
-
