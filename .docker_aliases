@@ -146,7 +146,7 @@ alias dkVin="docker volume inspect"
 # Get all volumes
 alias dkVls="docker volume ls"
 
-# Remove an volume
+# Remove a volume
 alias dkVrm="docker volume rm"
 # Remove all unused volume
 alias dkVpr="docker volume prune"
@@ -161,7 +161,7 @@ alias dkN="docker network"
 # Get all networks
 alias dkNls="docker network ls"
 
-# Start anNetwork connection
+# Start a network connection
 alias dkNs="docker network connect"
 # Stop a network connection
 alias dkNx="docker network disconnect"
@@ -169,7 +169,7 @@ alias dkNx="docker network disconnect"
 # Get information/IP from a network
 alias dkNin="docker network inspect"
 
-# Remove an network
+# Remove a network
 alias dkNrm="docker network rm"
 # Remove all unused network
 alias dkNpr="docker network prune"
