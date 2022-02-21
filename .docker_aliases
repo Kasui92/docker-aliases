@@ -192,7 +192,7 @@ alias dkcU="docker-compose up -d"
 
 # Stop a service and remove containers, volumes, networks
 alias dkcd="docker-compose down"
-alias dkcD="docker-compose down --rmi all"
+alias dkcD="docker-compose down --rmi all -v"
 
 # Kill containers of a service
 alias dkck="docker-compose kill"
