@@ -23,7 +23,7 @@ if [ -f ~/.docker_aliases ]; then
 fi
 ````
 
-Save the `.docker-aliases` file in the same directory as the `~/.bashrc` file.
+Save the `.docker_aliases` file in the same directory as the `~/.bashrc` file.
 
 ## Usage
 
