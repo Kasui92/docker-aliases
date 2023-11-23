@@ -11,7 +11,7 @@ Currently there are some of the main **Docker** commands and some shortcuts to i
 
 ## Installation
 
-Open the `~/.bashrc` (Linux or WSL) or` ~ / .bash_profile` (macOS) file and add the following at the bottom:
+Open the `~/.bashrc` (Linux or WSL) or `~/.bash_profile` (macOS) file and add the following at the bottom:
 
 ````
 # Docker Alias definitions.
