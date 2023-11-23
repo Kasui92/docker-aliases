@@ -179,37 +179,37 @@ alias dkNpr="docker network prune"
 # -------------------------
 
 # Base docker-compose shortcut
-alias dkc="docker-compose"
+alias dkc="docker compose"
 
 # Build a service
-alias dkcb="docker-compose build"
-alias dkcB="docker-compose build --no-cache"
+alias dkcb="docker compose build"
+alias dkcB="docker compose build --no-cache"
 
 # Create and start a container
-alias dkcu="docker-compose up"
+alias dkcu="docker compose up"
 # Create and start a container in detachere mod
-alias dkcU="docker-compose up -d"
+alias dkcU="docker compose up -d"
 
 # Stop a service and remove containers, volumes, networks
-alias dkcd="docker-compose down"
-alias dkcD="docker-compose down --rmi all -v"
+alias dkcd="docker compose down"
+alias dkcD="docker compose down --rmi all -v"
 
 # Kill containers of a service
-alias dkck="docker-compose kill"
+alias dkck="docker compose kill"
 
 # Get service logs
-alias dkcl="docker-compose logs"
-alias dkcL="docker-compose logs -f"
+alias dkcl="docker compose logs"
+alias dkcL="docker compose logs -f"
 
 # Get list of service containers
-alias dkcls="docker-compose ps"
+alias dkcls="docker compose ps"
 
 # Service containers menagement
-alias dkcs="docker-compose start"
-alias dkcx="docker-compose stop"
-alias dkcp="docker-compose pause"
-alias dkcP="docker-compose unpause"
-alias dkcS="docker-compose restart"
+alias dkcs="docker compose start"
+alias dkcx="docker compose stop"
+alias dkcp="docker compose pause"
+alias dkcP="docker compose unpause"
+alias dkcS="docker compose restart"
 
 # Rebuild a service
-alias dkcR="docker-compose down --rmi all && docker-compose up -d"
+alias dkcR="docker compose down --rmi all && docker compose up -d"
